@@ -10,12 +10,13 @@
 
 \begin{titlepage}
     \centering
-    {\bfseries\LARGE Universidad de La Habana \par}
-    \vspace{1cm}
-    {\scshape\Large Facultad de Matemática y Computación \par}
-    \vspace{3cm}
+   
     {\scshape\Huge Simulación de eventos discretos (Inventario) \par}
-    \vfill
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{./matcom.png}
+    \label{fig:enter-label}
+\end{figure}
 
     {\Large Pablo Gómez Vidal C-311 \par}
     
@@ -88,7 +89,12 @@ El archivo \textbf{core.py}  contiene una abstractación de la simulación, en e
   máximo de la simulación, se ejecuta la acción de \textbf{ApplyTimeEffects}, luego se revisa si se cumple el caso de parada, en caso
   negativo se ejecuta el evento y se actualiza el estado de la simulación, y se vuelve a revisar si se cumple el caso de
   parada con este nuevo estado.
-\end{itemize}
+  \item La simulación se detiene por alguno de los siguientes 3 motivos:
+    \begin{itemize}
+        \item Se alcanza el tiempo máximo de la simulación.
+        \item Se cumple el caso de parada definido en \textbf{stop\_case}.
+        \item Se terminan los eventos programados.
+    \end{itemize}
 \end{itemize}
 
 En \textbf{inventory.py} encontramos:
